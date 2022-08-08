@@ -12,9 +12,15 @@ const SongList = () => {
         setSongs([...songs, {title, id: uuid() }])
     }
     const [age, setAge] = useState(20);
+    
     useEffect(() => {
-        console.log("useEffect hook ran: ", songs);
-    })
+        console.log("Songs useEffect hook ran: ", songs);
+    }, [songs])
+
+    useEffect(() => {
+        console.log("Age useEffect hook ran: ", age);
+    }, [age])
+
     const incrementAge = () => {
         setAge(age + 1);
     }
